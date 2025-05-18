@@ -1,0 +1,277 @@
+/* 共通設定 */
+body {
+    margin: 0;
+    font-family: 'PT Sans', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    background-color: #FFFFFF;
+    color: #333333;
+    line-height: 1.6;
+}
+
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ヘッダートップ部分 */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.logo {
+    font-size: 16px;
+    font-weight: Regular;
+    letter-spacing: 0.05em;
+}
+
+.social {
+    display: flex;
+    gap: 20px;
+}
+
+.social img {
+    width: 24px;
+    height: 24px;
+}
+
+/* ヒーローテキスト */
+.hero-text {
+    font-size: 35px;
+    font-weight: normal;
+    line-height: 1.6;
+    margin: 0;
+    letter-spacing: 0.04em; /* 文字間を少し広げる */
+}
+
+/* ヘッダー */
+header {
+    position: relative;
+    width: 960px;
+    height: 420px;
+    margin-bottom: 120px;
+}
+
+header img {
+    width: 960px;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+}
+
+header .overlay {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    color: white;
+    transform: translateY(-50%);
+}
+
+header h1 {
+    font-size: 27px;
+    margin: 0 0 10px;
+}
+
+header p {
+    font-size: 27px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* WORKS セクション */
+#works {
+    max-width: 600px;
+    margin: 0;
+    margin-bottom: 120px;
+}
+
+#works h2 {
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 15px;
+    margin-left: 0;
+}
+
+#works h2::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 14px;
+    background-color: #204B77;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#works h3 {
+    font-size: 28px;
+    font-weight: normal;
+    margin: 20px 0 10px;
+    padding-left: 0;
+}
+
+#works .description {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 120px;
+    padding-left: 0;
+    white-space: nowrap; /* 自動折り返しを無効化 */
+    overflow-wrap: normal;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 460px);
+    grid-gap: 40px;
+    width: 960px;
+}
+
+.gallery img {
+    width: 460px;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* CONTACT セクション */
+#contact {
+    margin-top: 120px;
+    margin-bottom: 120px;
+    width: 960px;
+}
+
+#contact h2 {
+    font-size: 14px;
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    font-weight: normal;
+}
+
+#contact h2::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 14px;
+    background-color: #204B77;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.contact-content {
+    display: flex;
+    width: 960px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    margin-top: 120px;
+}
+
+.contact-content img {
+    width: 400px;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+    margin-right: 0;
+}
+
+.contact-content .form-container {
+    width: 560px;
+    background-color: #DDDDDD;
+    padding: 40px 50px;
+    box-sizing: border-box;
+    height: 600px;
+    flex-shrink: 0;
+}
+
+form label {
+    font-size: 12px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input {
+    width: 420px;
+    height: 40px;
+    font-size: 12px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+form .email-field {
+    margin-top: 20px;
+}
+
+form .message-field {
+    margin-top: 40px;
+}
+
+form textarea {
+    width: 420px;
+    height: 150px;
+    font-size: 12px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+.send-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.paper-plane-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url('../img/paper_plane_1.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 10px;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    font-size: 10px;
+    color: #999999;
+    padding: 20px 0 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid #CCCCCC;
+    margin-top: 60px;
+}
