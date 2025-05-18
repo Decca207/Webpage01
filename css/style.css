@@ -211,6 +211,7 @@ form label {
     font-size: 12px;
     display: block;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 form input {
@@ -220,6 +221,9 @@ form input {
     padding: 10px;
     border: 1px solid #ccc;
     margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 form .email-field {
@@ -237,6 +241,9 @@ form textarea {
     padding: 10px;
     border: 1px solid #ccc;
     resize: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .send-button {
