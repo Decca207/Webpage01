@@ -1,15 +1,24 @@
 /* 共通設定 */
+:root {
+  --container-width: 960px;
+  --primary-color: #204B77;
+}
+
 body {
     margin: 0;
     font-family: 'PT Sans', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
     background-color: #FFFFFF;
     color: #333333;
     line-height: 1.6;
+    font-size: 16px;
 }
 
 .wrapper {
-    width: 960px;
+    width: 100%;
+    max-width: var(--container-width);
     margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 * {
@@ -65,14 +74,15 @@ a {
 /* ヘッダー */
 header {
     position: relative;
-    width: 960px;
+    width: 100%;
+    max-width: var(--container-width);
     height: 420px;
-    margin-bottom: 120px;
+    margin: 0 auto 120px;
 }
 
 header img {
-    width: 960px;
-    height: 420px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
@@ -98,9 +108,9 @@ header p {
 
 /* WORKS セクション */
 #works {
-    max-width: 600px;
-    margin: 0;
-    margin-bottom: 120px;
+    max-width: var(--container-width);
+    margin: 0 auto 120px;
+    padding: 0;
 }
 
 #works h2 {
@@ -129,6 +139,7 @@ header p {
     font-weight: normal;
     margin: 20px 0 10px;
     padding-left: 0;
+    max-width: 600px;
 }
 
 #works .description {
@@ -136,28 +147,34 @@ header p {
     line-height: 1.4;
     margin-bottom: 120px;
     padding-left: 0;
-    white-space: nowrap; /* 自動折り返しを無効化 */
-    overflow-wrap: normal;
+    white-space: normal; /* 自動折り返しを有効化 */
+    overflow-wrap: break-word;
+    max-width: 600px;
 }
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(2, 460px);
-    grid-gap: 40px;
-    width: 960px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0;
 }
 
 .gallery img {
-    width: 460px;
+    width: 100%;
     height: 500px;
     object-fit: cover;
 }
 
 /* CONTACT セクション */
 #contact {
-    margin-top: 120px;
-    margin-bottom: 120px;
-    width: 960px;
+    margin: 120px auto;
+    width: 100%;
+    max-width: var(--container-width);
+    padding: 0;
 }
 
 #contact h2 {
@@ -183,28 +200,33 @@ header p {
 
 .contact-content {
     display: flex;
-    width: 960px;
+    width: 100%;
+    max-width: var(--container-width);
     flex-direction: row;
     flex-wrap: nowrap;
     box-sizing: border-box;
-    margin-top: 120px;
+    margin: 120px auto 0;
+    gap: 40px;
+    padding: 0;
 }
 
 .contact-content img {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: auto;
     display: block;
-    flex-shrink: 0;
-    margin-right: 0;
+    margin: 0;
+    flex: 0 0 auto;
+    object-fit: cover;
 }
 
 .contact-content .form-container {
-    width: 560px;
+    width: 100%;
+    max-width: 560px;
     background-color: #DDDDDD;
-    padding: 40px 50px;
+    padding: 40px 5%;
     box-sizing: border-box;
-    height: 600px;
-    flex-shrink: 0;
+    flex: 1;
 }
 
 form label {
@@ -215,7 +237,8 @@ form label {
 }
 
 form input {
-    width: 420px;
+    width: 100%;
+    max-width: 420px;
     height: 40px;
     font-size: 12px;
     padding: 10px;
@@ -235,7 +258,8 @@ form .message-field {
 }
 
 form textarea {
-    width: 420px;
+    width: 100%;
+    max-width: 420px;
     height: 150px;
     font-size: 12px;
     padding: 10px;
@@ -281,4 +305,88 @@ footer {
     width: 100%;
     border-top: 1px solid #CCCCCC;
     margin-top: 60px;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 1000px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .gallery img {
+        height: auto;
+        max-height: 500px;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-content img {
+        max-width: 100%;
+        margin: 0 auto 40px;
+    }
+    
+    .contact-content .form-container {
+        margin: 0 auto 40px;
+        width: 100%;
+        max-width: 560px;
+        padding: 40px 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-text {
+        font-size: 28px;
+    }
+
+    header h1,
+    header p {
+        font-size: 22px;
+    }
+
+
+    #works h3 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-top {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .hero-text {
+        font-size: 24px;
+    }
+
+    header h1,
+    header p {
+        font-size: 20px;
+    }
+
+    #works h3 {
+        font-size: 22px;
+    }
+
+    #works .description {
+        margin-bottom: 60px;
+    }
+
+    .gallery img {
+        height: 300px;
+    }
+    
+    header {
+        height: auto;
+        margin-bottom: 60px;
+    }
+    
+    header img {
+        height: auto;
+    }
 }
