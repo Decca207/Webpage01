@@ -12,16 +12,16 @@ body {
     color: #333333;
     line-height: 1.6;
     -webkit-text-size-adjust: 100%;
-    text-align: center;
 }
 
 .wrapper {
     width: 960px;
-    max-width: 100%;
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
     position: relative;
+    left: 0;
+    right: 0;
 }
 
 * {
